@@ -5,6 +5,8 @@ plugins {
 apply plugin: 'java'
 apply plugin: "jacoco"
 
+version = '0.0.1'
+
 task wrapper(type: Wrapper) {
     gradleVersion = '3.0'
 }
