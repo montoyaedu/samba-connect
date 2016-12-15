@@ -1,0 +1,12 @@
+language: java
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+- ./startdocker.sh
+
+script:
+- ./gradlew integTest

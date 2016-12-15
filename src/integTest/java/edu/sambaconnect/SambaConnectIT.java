@@ -13,9 +13,9 @@ public class SambaConnectIT {
     @Test public void
     thatCanConnectToKnownShare() {
         SambaConnect sambaConnect = new SambaConnect();
-        String user = System.getProperty("share.user");
-        String password = System.getProperty("share.password");
-        String url = System.getProperty("share.url");
+        String user = "example1";
+        String password = "badpass";
+        String url = "smb://127.0.0.1/example1/";
         try {
             sambaConnect.connectTo(user, password, url);
         } catch (Exception e) {

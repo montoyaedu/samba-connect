@@ -28,14 +28,11 @@ configurations {
 }
 
 task integTest(type: Test) {
-   systemProperty "share.user", project.getProperty("share.user") 
-   systemProperty "share.password", project.getProperty("share.password") 
-   systemProperty "share.url", project.getProperty("share.url") 
    //dependsOn startApp
    //finalizedBy stopApp 
    testClassesDir = sourceSets.integTest.output.classesDir 
    classpath = sourceSets.integTest.runtimeClasspath 
-   //mustRunAfter test 
+   mustRunAfter test 
 }
 
 dependencies {
