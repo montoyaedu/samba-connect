@@ -9,7 +9,7 @@ before_install:
 - ./startdocker.sh
 
 script:
-- ./gradlew integTest
+- ./gradlew clean test jacocoTestReport
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

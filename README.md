@@ -9,12 +9,12 @@ run integration tests
 =====================
 
 `````
-./gradlew integTest
+./gradlew test
 `````
 
 publish to sonarqube
 ====================
 
 `````
-./gradlew clean integTest sonarqube -Dsonar.host.url=http://sonar.ethiclab.it -Dsonar.junit.reportsPath=build/test-results/integTest -Dsonar.tests=src/integTest -Dsonar.jacoco.reportPath=build/jacoco/integTest.exec
+./gradlew clean test sonarqube -Dsonar.host.url=http://sonar.ethiclab.it
 `````

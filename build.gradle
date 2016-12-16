@@ -5,6 +5,12 @@ plugins {
 apply plugin: 'java'
 apply plugin: "jacoco"
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
 version = '0.0.1'
 
 task wrapper(type: Wrapper) {
@@ -13,26 +19,6 @@ task wrapper(type: Wrapper) {
 
 repositories {
     jcenter()
-}
-
-sourceSets {
-   integTest {
-      compileClasspath += main.output + test.output
-      runtimeClasspath += main.output + test.output
-   }
-}
-
-configurations {
-   integTestCompile.extendsFrom testCompile
-   integTestRuntime.extendsFrom testRuntime
-}
-
-task integTest(type: Test) {
-   //dependsOn startApp
-   //finalizedBy stopApp 
-   testClassesDir = sourceSets.integTest.output.classesDir 
-   classpath = sourceSets.integTest.runtimeClasspath 
-   mustRunAfter test 
 }
 
 dependencies {
